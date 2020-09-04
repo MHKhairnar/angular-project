@@ -1,0 +1,62 @@
+<div class="container-fluid">
+  <div class="row" style="height: 100vh">
+    <!-- left-block -->
+    <div
+      class="col bg-danger d-flex flex-column justify-content-center align-items-center"
+    >
+      <div class="h4">Welcome to Zomato</div>
+    </div>
+
+    <!-- rightblock -->
+    <div
+      class="col bg-light d-flex flex-column justify-content-center align-items-center"
+      [formGroup]="fbFormGroup"
+    >
+      <div class="alert alert-danger" role="alert " if></div>
+      <div class="h3">Application Register</div>
+      <div>
+        <input
+          type="text"
+          placeholder=" Enter Username"
+          class="from-control"
+          formControlName="username"
+        />
+      </div>
+
+      <div class="mt-1">
+        <input
+          type="password"
+          placeholder=" Enter Password"
+          class="from-control"
+          formControlName="password"
+        />
+      </div>
+
+      <div>
+        <input
+          type="text"
+          placeholder=" Enter Email"
+          class="from-control"
+          formControlName="email"
+        />
+      </div>
+
+      <div>
+        <input
+          type="text"
+          placeholder=" Enter Mobile"
+          class="from-control"
+          formControlName="mobile"
+        />
+      </div>
+      <button
+        class="btn btn-sm btn-warning mt-1"
+        [disabled]="!fbFormGroup.valid"
+        (click)="registerHere()"
+      >
+        Register Here
+      </button>
+      <a routerLink="/login">Login Here</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <div class="row" style="height: 100vh">
+    <!-- left-block -->
+    <div
+      class="col bg-danger d-flex flex-column justify-content-center align-items-center"
+    >
+      <div class="h4">Welcome to Zomato</div>
+    </div>
+
+    <!-- rightblock -->
+    <div
+      class="col bg-light d-flex flex-column justify-content-center align-items-center"
+      [formGroup]="fbFormGroup"
+    >
+      <div class="alert alert-danger" role="alert " if></div>
+      <div class="h3">Application Login</div>
+      <div>
+        <input
+          type="text"
+          placeholder=" Enter Username"
+          class="from-control"
+          formControlName="username"
+        />
+      </div>
+
+      <div class="mt-1">
+        <input
+          type="password"
+          placeholder=" Enter Password"
+          class="from-control"
+          formControlName="password"
+        />
+      </div>
+      <button
+        class="btn btn-sm btn-warning mt-1"
+        [disabled]="!fbFormGroup.valid"
+        (click)="loginProcessHere()"
+      >
+        Login Here
+      </button>
+      <a routerLink="/register">Register Here</a>
+    </div>
+  </div>
+</div>
